@@ -1,0 +1,22 @@
+1) can use the form directly to create the form dont have to inititate it in model
+2){{form.as_p}} as_p here stands for as paragraph,we can change p also
+3)form = Loginfornm in view diretly handles the get request
+ but have to write ofr the Post request 
+ 4) if u r using login_required decorator, configure the setting.py file
+ with LOGIN_URL='login' ,LOGOUT_URL='logout
+
+5) saving images-
+setting.py-> import os
+setup MEDIA_URL='/media/'#for storing in the media folder
+and MEDIA_ROOT= os.path.join(BASE_DIR,'media/')
+add the url to the urlspattern in mysite.urls
+urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+6) if we are sumbmitting img in form we need to add attribute enctype="multipart/form-data"
+7)this.id or other can be used from jquery targeting a class or id to get the element.
+8)redirect uses url not html
+  9){% if logged_user in post.users.all() %}
+  the logged_user in here is provided by django itself 
+  10) whenever we change or addd a new static file 
+  restart the server
+also use this comman in cli python3 manage.py collectstatic
+11)we have to learn react to get the like working back to the same there.

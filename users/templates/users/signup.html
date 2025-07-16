@@ -1,0 +1,69 @@
+{% extends 'users/base.html' %}
+
+{% block body %}
+
+ <div class="mt-1 flex items-center justify-center bg-gray-100">
+    <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
+      <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Create Your Account</h2>
+      
+      <form action="#" method="POST" class="space-y-5">
+        {% csrf_token %}
+        <!-- Username -->
+        <div>
+          <label for="username" class="block text-gray-600 mb-1">Username</label>
+          <input type="text" id="username" name="username" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-400 focus:outline-none">
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-gray-600 mb-1">Email</label>
+          <input type="email" id="email" name="email" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-400 focus:outline-none">
+        </div>
+
+        <!-- First Name -->
+        <div>
+          <label for="first_name" class="block text-gray-600 mb-1">First Name</label>
+          <input type="text" id="first_name" name="first_name" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-400 focus:outline-none">
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label for="password" class="block text-gray-600 mb-1">Password</label>
+          <input type="password" id="password" name="password" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-400 focus:outline-none">
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <label for="confirm_password" class="block text-gray-600 mb-1">Confirm Password</label>
+          <input type="password" id="confirm_password" name="password2" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-400 focus:outline-none">
+        </div>
+
+        <!-- Submit -->
+        <div class="flex justify-center">
+          <button type="submit"
+                  class="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition duration-200">
+            Sign Up
+          </button>
+        </div>
+      </form>
+
+      <!-- Already have an account -->
+      <p class="mt-6 text-center text-sm text-gray-600">
+        Already have an account? 
+        <a href="{% url 'login' %}" class="text-green-500 hover:underline">Login</a>
+      </p>
+    </div>
+  </div>
+    
+    <!-- <form action="" method="post">
+        {% csrf_token %}
+        {{user_form.as_p}}
+        <button class="btn btn-primary">Sign Up</button>
+    </form> -->
+{% endblock body %}
+    

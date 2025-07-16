@@ -1,0 +1,51 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="flex justify-center mt-5 p-10">
+    <h2 class="text-3xl font-normal text-gray-600">My Posts</h2>
+</div>
+<div class="grid mx-72 p-16 grid-cols-1 justify-center">
+    {% for post in posts  %}
+    <a href="" class="mb-4">
+        <div class="user-container flex rounded shadow-lg">
+            <img src="{{profile.photo.url}}" alt=""class="rounded-full h-16 w-16">
+            <span class="font-bold mx-2 my-3 text-2xl text-indigo-400">{{post.user}}</span>
+        </div>
+    <div class="rounded justify-center overflow-hidden w-[470px] h-[470px] bg-white shadow-lg">
+        <img src="{{post.image.url}}" alt="">
+    </div>
+    <div class="px-4 py-4 flex">
+        <div class="icon-container">
+            <img class="h-5 w-5 mx-2" src="{% static 'users/images/like.png' %}" alt="">
+        </div>
+        <div class="icon-container">
+            <img class="h-5 w-5 mx-2" src="{% static 'users/images/comment.png' %}" alt="">
+        </div>
+        <div class="icon-container">
+            <img class="h-5 w-5 mx-2" src="{% static 'users/images/share.png' %}" alt="">
+        </div>
+    </div>
+    <div class="px-6">
+        <div class="font-bold text-lg mb-1">{{post.title}}</div>
+        <p class="text-gray-700 text-base">{{post.caption}}</p>
+    </div>
+    </a>
+    {% endfor %}
+</div>
+
+<!-- {% for post in posts  %}
+
+    <h2>{{post.user}}</h2>
+    <h1>{{post.title}}</h1>
+
+    <img src="{{post.image.url}}" alt="" style="height: 200px;">
+
+{% endfor %}
+    
+     -->
+{% endblock body %}
+
+
+    

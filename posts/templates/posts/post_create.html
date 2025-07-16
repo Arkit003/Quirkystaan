@@ -1,0 +1,43 @@
+{% extends 'users/base.html' %}
+
+{% block body %}
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
+      <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Quirk Yourself Out</h2>
+      <!-- <div class="error-container text-red-500 px-10"> -->
+      <form action="#" method="POST" class="space-y-5" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- old pass -->
+        <div>
+          <label for="title" class="block text-gray-600 mb-1">Title</label>
+          <input type="text" id="title" name="title" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-400 focus:outline-none">
+        </div>
+        <!-- new pass -->
+        <div>
+          <label for="image" class="block text-gray-600 mb-1">Image</label>
+          <input type="file" id="image" name="image" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-400 focus:outline-none">
+        </div>
+        <div>
+          <label for="caption" class="block text-gray-600 mb-1">Caption</label>
+          <textarea id="caption" name="caption" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-400 focus:outline-none"></textarea>
+        </div>
+
+
+        <!-- new pass-->
+        <div class="flex items-center justify-center">
+          <button type="submit"
+                  class="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition duration-200">
+            Post
+          </button>
+        </div>
+      </form>
+    <!-- <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form> -->
+{% endblock body %}
+    
